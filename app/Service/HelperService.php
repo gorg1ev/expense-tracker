@@ -31,4 +31,12 @@ class HelperService
         }
     }
 
+    public static function createStorageIfNotExist(string $path): void
+    {
+        if (is_dir($path)) {
+            return;
+        }
+
+        mkdir($path);
+    }
 }

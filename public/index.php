@@ -4,11 +4,15 @@ use App\App;
 use App\Controller\HomeController;
 use App\Controller\ListController;
 use App\Router;
+use App\Service\HelperService;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 const STORAGE_PATH = __DIR__ . '/../storage';
 const VIEW_PATH = __DIR__ . '/../views';
+
+HelperService::createStorageIfNotExist(STORAGE_PATH);
+
 
 $router = new Router();
 
